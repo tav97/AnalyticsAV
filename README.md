@@ -1,10 +1,16 @@
 # AnalyticsAV
 
+
 library(tidyverse) #calculations
+
 library(lubridate) #dates 
+
 library(hms) #time
+
 library(data.table) #exporting data frame
+
 library(data.table)
+
 
 #load original .csv files, a years worth of data from August 2020 to July 2021
 aug08_df <- divvy_202008_tripdata <- read.csv("C:/Users/apoor/Downloads/2020 Bikesales/2020 extracted/202008-divvy-tripdata.csv")

@@ -4,7 +4,12 @@ Analyzed beke company customer purchase pattern Trends with R
 
 # Technologies Used
 R
+Tableau 
 
+# Data visualization
+![image](https://github.com/tav97/AnalyticsAV/assets/151886105/ee251c66-4598-47ca-90c5-d430fa806421)
+
+ 
 # DataAnalysis in R
 **Libraries Loaded**
 

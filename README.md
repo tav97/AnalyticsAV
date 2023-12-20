@@ -1,5 +1,11 @@
 # BikeCompany Customer behaviour data analysis
 
+Analyzed beke company customer purchase pattern Trends with R
+
+# Technologies Used
+R
+
+# DataAnalysis in R
 **Libraries Loaded**
 
 library(tidyverse) #calculations
@@ -143,7 +149,7 @@ cyclistic_date %>%
   group_by(member_casual) %>% 
   count(member_casual)
 
-**----------------TYPE OF BIKE---------------------**
+**Type of bike**
 
 **total rides by member type**
 cyclistic_date %>%
@@ -166,9 +172,9 @@ cyclistic_date %>%
   count(hour) %>% 
   print(n = 24, na.print = "")
 
-**----------------------TIME OF DAY-----------------------**
+**Tim of day**
 
-**-----morning-------**
+**morning**
 #total rides by member type 
 cyclistic_date %>%
   group_by(member_casual) %>% 

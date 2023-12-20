@@ -1,3 +1,5 @@
+# BikeCompany Customer behaviour data analysis
+
 **Libraries Loaded**
 
 library(tidyverse) #calculations
@@ -335,20 +337,20 @@ cyclistic_date %>%
    group_by(season, member_casual) %>%
    count(season)
 
-**AVERAGE RIDE LENGTH**
+**Average ride length**
 
 **average of ride_length**
 cyclistic_avgRide <- mean(cyclistic_date$ride_length)
 print(cyclistic_avgRide)
 
-**MEMBER TYPE**
+**Member type**
 
 **average ride_length**
 cyclistic_date %>% group_by( member_casual) %>% 
   summarise_at(vars(ride_length),
                list(time = mean))
 
-**TYPE OF BIKE**
+**Type of Bike**
 
 **total rides by member type** 
 cyclistic_date %>% group_by(member_casual, rideable_type) %>% 
@@ -361,7 +363,7 @@ cyclistic_date %>% group_by(rideable_type) %>%
                list(time = mean))
 
 
-**HOUR**
+**Hour**
 
 **average ride_length by member type**
 cyclistic_date %>% group_by(hour, member_casual) %>% 
@@ -375,7 +377,7 @@ cyclistic_date %>% group_by(hour) %>%
                list(time = mean)) %>% 
   print(n=24) #lets you view entire tibble
 
-**TIME OF DAY**
+**Time of day**
 
 **morning**
 
@@ -456,7 +458,7 @@ cyclistic_date %>%
                list(time = mean))
 
 
-**DAY OF THE WEEK**
+**Day of week**
 
 **average ride_length by member type**
 cyclistic_date %>% group_by(member_casual, day_of_week) %>% 
@@ -469,7 +471,7 @@ cyclistic_date %>% group_by(day_of_week) %>%
                list(time = mean))
 
 
-**DAY OF THE MONTH**
+**Day of the month**
 
 **average ride_length by member type**
 cyclistic_date %>% group_by(day, member_casual) %>% 
@@ -483,7 +485,7 @@ cyclistic_date %>% group_by(day) %>%
                list(time = mean)) %>% 
   print(n=31)  #lets you view entire tibble
 
-**MONTH**
+**Month**
 
 **average ride_length by member type**
 cyclistic_date %>% group_by(month, member_casual) %>% 
@@ -496,7 +498,7 @@ cyclistic_date %>% group_by(month) %>%
   summarise_at(vars(ride_length),
                list(time = mean))
 
-**SEASON**
+**Season**
 
 **spring**
 
@@ -515,7 +517,7 @@ cyclistic_date %>%
 
 
 
-#-----summer------
+**Summer**
 
 #average ride length by member type for summer 
 cyclistic_date %>% 
@@ -531,7 +533,7 @@ cyclistic_date %>%
                list(time = mean))
 
 
-#-----fall------
+**Fall**
 
 #average ride length by member type
 cyclistic_date %>% 
@@ -540,28 +542,28 @@ cyclistic_date %>%
   summarise_at(vars(ride_length),
                list(time = mean))
 
-#average ride length
+**Average ride length**
 cyclistic_date %>% 
   filter(season == "Fall") %>% 
   summarise_at(vars(ride_length),
                list(time = mean))
 
-#-----winter-----
+**Winter**
 
-#average ride length by member type
+**Average ride lngth by member type**
 cyclistic_date %>% 
   group_by(member_casual) %>% 
   filter(season == "Winter") %>% 
   summarise_at(vars(ride_length),
                list(time = mean))
-#average ride length
+**Average Ride Length**
 cyclistic_date %>% 
   filter(season == "Winter") %>% 
   summarise_at(vars(ride_length),
                list(time = mean))
 
 
-#----all seasons----
+**All Seasons**
 
 #average ride length by member type
 cyclistic_date %>% 
@@ -569,17 +571,17 @@ cyclistic_date %>%
   summarise_at(vars(ride_length),
                list(time = mean))
 
-#average ride length 
+**Average Ride Length** 
 cyclistic_date %>% 
   group_by(season) %>% 
   summarise_at(vars(ride_length),
                list(time = mean))
 
-#created a new dataframe to use in Tableau
+**Created new dataframe in Tableau**
 cyclistic_tableau <- cyclistic_date
 
 
-#clean the data
+**Clean teh data**
 cyclistic_tableau <- cyclistic_tableau %>%  #remove columns not needed: start_station_name, end_station_name, time, started_at, ended_at
   select(-c(start_station_name, end_station_name, time, started_at, ended_at))
 
